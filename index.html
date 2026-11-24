@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KORA ROAST HYPER — Kichik Odamcha, Jonli Video Kofe & 20+20</title>
+  <style>
+    :root {
+      --bg: #0c0907;
+      --surface: #17120f;
+      --card: #221a15;
+      --card-2: #2e231c;
+      --text: #fff9f2;
+      --muted: #c8b6a6;
+      --accent: #f59e0b;
+      --accent-2: #ea580c;
+      --accent-glow: rgba(245, 158, 11, 0.38);
+      --green: #22c55e;
+      --rose: #f43f5e;
+      --border: rgba(255, 244, 230, 0.13);
+    }
+
+    body[data-theme="cyber"] {
+      --bg: #050814; --surface: #0b1124; --card: #111b36; --card-2: #19284d;
+      --text: #f0f9ff; --muted: #94a3b8; --accent: #22d3ee; --accent-2: #a855f7;
+      --accent-glow: rgba(34, 211, 238, 0.38); --border: rgba(34, 211, 238, 0.22);
+    }
+    body[data-theme="matcha"] {
+      --bg: #07120d; --surface: #0d1f17; --card: #132c21; --card-2: #1c4031;
+      --text: #f2fdf7; --muted: #a3c4b5; --accent: #34d399; --accent-2: #10b981;
+      --accent-glow: rgba(52, 211, 153, 0.38); --border: rgba(52, 211, 153, 0.22);
+    }
+    body[data-theme="crimson"] {
+      --bg: #120609; --surface: #1e0b10; --card: #2c1018; --card-2: #3f1622;
+      --text: #fff1f4; --muted: #d4a5b0; --accent: #fb7185; --accent-2: #e11d48;
+      --accent-glow: rgba(251, 113, 133, 0.38); --border: rgba(251, 113, 133, 0.22);
+    }
+    body[data-theme="cocoa"] {
+      --bg: #100906; --surface: #1c100b; --card: #291811; --card-2: #3a2218;
+      --text: #fff5ee; --muted: #cbb0a2; --accent: #d97706; --accent-2: #92400e;
+      --accent-glow: rgba(217, 119, 6, 0.4); --border: rgba(217, 119, 6, 0.24);
+    }
+    body[data-theme="violet"] {
+      --bg: #0b0616; --surface: #140b26; --card: #1e1138; --card-2: #2b1850;
+      --text: #f8f5ff; --muted: #b9a8d9; --accent: #c084fc; --accent-2: #ec4899;
+      --accent-glow: rgba(192, 132, 252, 0.4); --border: rgba(192, 132, 252, 0.24);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      transition: background 0.35s ease, color 0.25s ease;
+    }
+
+    body.disco-mode .app {
+      animation: discoHue 4s linear infinite;
+    }
+    @keyframes discoHue {
+      0% { filter: hue-rotate(0deg) saturate(1.25); }
+      50% { filter: hue-rotate(180deg) saturate(1.4); }
+      100% { filter: hue-rotate(360deg) saturate(1.25); }
+    }
+
+    #bgParticles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .app { position: relative; z-index: 1; }
+
+    /* KICHIK BARISTA ODAMCHA (shu sahifada o'zi aylanib yuradi) */
+    .tiny-barista {
+      position: fixed;
+      bottom: 14px;
+      left: 20px;
+      z-index: 48;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: bottom center;
+      transition: transform 0.15s linear;
+    }
+    .tiny-bubble {
+      background: rgba(15, 11, 9, 0.92);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 2px 7px;
+      border-radius: 9px;
+      font-size: 0.62rem;
+      font-weight: 800;
+      white-space: nowrap;
+      margin-bottom: 3px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    }
+    .tiny-head {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #fde68a;
+      border: 1.5px solid #92400e;
+      position: relative;
+    }
+    .tiny-hat {
+      position: absolute;
+      top: -4px; left: -1px; right: -1px;
+      height: 6px;
+      border-radius: 6px 6px 2px 2px;
+      background: var(--accent);
+    }
+    .tiny-mid { display: flex; align-items: flex-start; margin-top: 1px; }
+    .tiny-arm {
+      width: 5px; height: 14px;
+      background: var(--accent-2);
+      border-radius: 99px;
+      transform-origin: top center;
+      animation: tinyArm 0.9s ease-in-out infinite;
+    }
+    @keyframes tinyArm {
+      0%, 100% { transform: rotate(-8deg); }
+      50% { transform: rotate(-48deg); }
+    }
+    .tiny-body {
+      width: 18px; height: 22px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      margin: 0 1.5px;
+    }
+    .tiny-legs { display: flex; gap: 3px; margin-top: 1px; }
+    .tiny-leg {
+      width: 5px; height: 13px;
+      background: #475569;
+      border-radius: 99px;
+      transform-origin: top center;
+    }
+    .tiny-leg.l1 { animation: tinyL1 0.35s ease-in-out infinite alternate; }
+    .tiny-leg.l2 { animation: tinyL2 0.35s ease-in-out infinite alternate; }
+    @keyframes tinyL1 { from { transform: rotate(-25deg); } to { transform: rotate(25deg); } }
+    @keyframes tinyL2 { from { transform: rotate(25deg); } to { transform: rotate(-25deg); } }
+
+    /* Rang Paneli */
+    .color-bar {
+      background: rgba(0, 0, 0, 0.56);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+    .swatches { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .swatch-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 10px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-size: 0.74rem; font-weight: 800; cursor: pointer;
+      transition: 0.15s;
+    }
+    .swatch-btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+    .swatch-btn.active { border-color: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
+    .dot { width: 9px; height: 9px; border-radius: 50%; }
+
+    /* Navbar */
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 12px 4%;
+      background: rgba(12, 9, 7, 0.86); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.25rem; font-weight: 900; cursor: pointer; letter-spacing: 0.6px; }
+    .brand span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 6px 8px;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .btn {
+      border: 1px solid var(--border); background: var(--card); color: var(--text);
+      padding: 8px 13px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+      transition: transform 0.14s, border-color 0.18s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 6px 18px var(--accent-glow); }
+    .btn:active { transform: scale(0.95); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #090604; border: none; box-shadow: 0 8px 22px var(--accent-glow);
+    }
+    .cart-badge {
+      background: #090604; color: var(--accent); padding: 2px 7px; border-radius: 999px; font-size: 0.72rem; font-weight: 900;
+    }
+
+    /* Hero + O'zi Kofe Tayyorlash */
+    .hero {
+      padding: 36px 4% 20px; max-width: 1440px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 26px; align-items: center;
+    }
+    @media (max-width: 960px) { .hero { grid-template-columns: 1fr; } }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: 999px;
+      background: var(--card); border: 1px solid var(--border); color: var(--accent); font-size: 0.76rem; font-weight: 800;
+      margin-bottom: 12px; animation: floatTag 3s ease-in-out infinite;
+    }
+    @keyframes floatTag { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+    .hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.5rem); line-height: 1.07; font-weight: 900; margin-bottom: 12px; }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 0.96rem; max-width: 580px; margin-bottom: 18px; }
+    .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+
+    .mini-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 620px; }
+    @media (max-width: 560px) { .mini-stats { grid-template-columns: repeat(2, 1fr); } }
+    .m-stat {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 11px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .m-stat:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .m-stat strong { display: block; font-size: 1.1rem; color: var(--accent); }
+    .m-stat span { font-size: 0.72rem; color: var(--muted); }
+
+    .maker-panel {
+      background: linear-gradient(165deg, var(--card-2), var(--surface));
+      border: 1px solid var(--border); border-radius: 24px; padding: 20px;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.48);
+    }
+    .maker-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .maker-top h2 { font-size: 1.12rem; }
+
+    .maker-stage {
+      display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: center;
+      background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border); border-radius: 18px; padding: 14px; margin-bottom: 12px;
+    }
+    @media (max-width: 480px) { .maker-stage { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+    .beaker {
+      position: relative; width: 92px; height: 120px; border: 3px solid var(--accent); border-top: none;
+      border-radius: 0 0 28px 28px; overflow: hidden; background: rgba(255, 255, 255, 0.04); box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .layer-base { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: #4a230c; transition: height 0.4s ease; }
+    .layer-milk { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: rgba(245, 232, 214, 0.85); transition: height 0.4s ease; }
+    .layer-topping { position: absolute; top: 0; left: 0; right: 0; height: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: height 0.4s ease; }
+
+    .maker-status-title { font-weight: 800; font-size: 0.95rem; color: var(--accent); margin-bottom: 4px; }
+    .maker-status-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 8px; }
+    .step-progress { height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+    .step-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.35s ease; }
+
+    .maker-btns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+    .brew-btn {
+      padding: 8px 10px; border-radius: 12px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: 0.16s;
+    }
+    .brew-btn:hover { border-color: var(--accent); }
+    .brew-btn.done { border-color: var(--green); background: rgba(34, 197, 94, 0.16); color: #bbf7d0; }
+
+    /* SHU SAHIFADAGI CHIROYLI VIDEO KOFE SAHNASI */
+    section { padding: 38px 4%; max-width: 1440px; margin: 0 auto; }
+    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .sec-head h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; }
+    .sec-head p { color: var(--muted); font-size: 0.9rem; }
+
+    .video-showcase {
+      display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 20px; align-items: stretch;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 26px; padding: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+    }
+    @media (max-width: 940px) { .video-showcase { grid-template-columns: 1fr; } }
+
+    .video-frame {
+      position: relative; border-radius: 20px; overflow: hidden; border: 2px solid var(--accent);
+      min-height: 340px; background: #000; box-shadow: 0 0 32px var(--accent-glow);
+    }
+    .video-frame img {
+      width: 100%; height: 340px; object-fit: cover; display: block;
+      animation: cinemaPan 7s ease-in-out infinite alternate;
+    }
+    @keyframes cinemaPan {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.15) translate(-2%, -1.5%); }
+    }
+
+    .coffee-pour-line {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 11px; height: 64%;
+      background: linear-gradient(180deg, var(--accent), #4a230c);
+      border-radius: 0 0 99px 99px;
+      box-shadow: 0 0 18px var(--accent-glow);
+      animation: pourPulse 1.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes pourPulse {
+      0%, 100% { opacity: 0.6; width: 9px; }
+      50% { opacity: 1; width: 14px; }
+    }
+
+    .steam-cloud {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.16), transparent 65%);
+      animation: steamGlow 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes steamGlow { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.85; } }
+
+    .v-top-hud {
+      position: absolute; top: 12px; left: 12px; right: 12px;
+      display: flex; justify-content: space-between; align-items: center; gap: 8px; pointer-events: none;
+    }
+    .v-chip {
+      background: rgba(0, 0, 0, 0.76); border: 1px solid var(--accent); color: var(--accent);
+      padding: 4px 11px; border-radius: 999px; font-size: 0.72rem; font-weight: 800;
+    }
+    .v-bottom-hud {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9));
+      padding: 22px 16px 14px;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+
+    .video-side {
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 16px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+    }
+    .scene-item {
+      padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border); background: var(--card-2);
+      display: flex; justify-content: space-between; align-items: center; gap: 8px; cursor: pointer; transition: 0.16s;
+    }
+    .scene-item:hover, .scene-item.active { border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
+
+    /* Kataloglar */
+    .toolbar {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 20px; background: var(--surface); border: 1px solid var(--border); padding: 11px 14px; border-radius: 18px;
+    }
+    .pill-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .pill {
+      padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--card); color: var(--muted); font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: 0.15s;
+    }
+    .pill:hover { color: var(--text); border-color: var(--accent); }
+    .pill.active { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #090604; border-color: transparent; }
+
+    .search-box {
+      padding: 7px 13px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-size: 0.84rem; min-width: 190px; outline: none;
+    }
+    .search-box:focus { border-color: var(--accent); }
+
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 16px; }
+
+    .item-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+    }
+    .item-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45); }
+
+    .thumb { position: relative; height: 156px; overflow: hidden; background: var(--card-2); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .item-card:hover .thumb img { transform: scale(1.07); }
+
+    .num-badge {
+      position: absolute; top: 9px; left: 9px; background: rgba(0, 0, 0, 0.74);
+      color: var(--accent); border: 1px solid var(--border); padding: 3px 8px; border-radius: 999px; font-size: 0.7rem; font-weight: 800;
+    }
+    .heart-btn {
+      position: absolute; top: 9px; right: 9px; width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.68); color: #fff; font-size: 0.9rem; cursor: pointer;
+    }
+    .heart-btn.active { background: var(--rose); border-color: var(--rose); }
+
+    .item-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+    .item-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+    .item-top h3 { font-size: 0.96rem; font-weight: 800; }
+    .item-price { font-size: 0.88rem; font-weight: 800; color: var(--accent); white-space: nowrap; }
+    .item-sub { font-size: 0.72rem; color: var(--accent); margin-bottom: 5px; font-weight: 700; }
+    .item-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 11px; flex: 1; }
+    .item-foot { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
+
+    /* Drawer & Modal */
+    .drawer-backdrop {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(5px);
+      display: none; justify-content: flex-end; z-index: 60;
+    }
+    .drawer-backdrop.open { display: flex; }
+    .drawer {
+      width: 100%; max-width: 410px; height: 100%; background: var(--surface);
+      border-left: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .cart-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+    .cart-row {
+      background: var(--card); border: 1px solid var(--border); border-radius: 13px; padding: 11px;
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    }
+    .q-btn {
+      width: 25px; height: 25px; border-radius: 7px; border: 1px solid var(--border);
+      background: var(--card-2); color: var(--text); font-weight: 800; cursor: pointer;
+    }
+
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.76); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center; padding: 16px; z-index: 70;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      width: 100%; max-width: 430px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 22px;
+    }
+    .modal input, .modal select {
+      width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); margin-bottom: 10px; font-size: 0.9rem; outline: none;
+    }
+
+    .toast {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: var(--card-2); color: var(--text); border: 1px solid var(--accent); padding: 10px 18px;
+      border-radius: 999px; font-size: 0.85rem; font-weight: 700; opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s; z-index: 90;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    footer {
+      text-align: center; padding: 26px 4% 72px; color: var(--muted); font-size: 0.85rem;
+      border-top: 1px solid var(--border); margin-top: 24px;
+    }
+  </style>
+</head>
+<body data-theme="amber">
+  <canvas id="bgParticles"></canvas>
+
+  <!-- Shu sahifada kichkina barista odamcha o'zi aylanib yuradi -->
+  <div class="tiny-barista" id="tinyBarista">
+    <div class="tiny-bubble" id="tinyBubble">Kofe vaqti! ☕</div>
+    <div class="tiny-head"><div class="tiny-hat"></div></div>
+    <div class="tiny-mid">
+      <div class="tiny-arm"></div>
+      <div class="tiny-body"></div>
+      <div class="tiny-arm"></div>
+    </div>
+    <div class="tiny-legs">
+      <div class="tiny-leg l1"></div>
+      <div class="tiny-leg l2"></div>
+    </div>
+  </div>
+
+  <div class="app">
+    <!-- 6 xil Rang Rejimi -->
+    <div class="color-bar">
+      <div class="swatches">
+        <span style="color:var(--muted); font-weight:800;">RANGLAR:</span>
+        <button class="swatch-btn active" data-theme="amber"><i class="dot" style="background:#f59e0b"></i>Karamel</button>
+        <button class="swatch-btn" data-theme="cyber"><i class="dot" style="background:#22d3ee"></i>Kiber</button>
+        <button class="swatch-btn" data-theme="matcha"><i class="dot" style="background:#34d399"></i>Matcha</button>
+        <button class="swatch-btn" data-theme="crimson"><i class="dot" style="background:#fb7185"></i>Qirmizi</button>
+        <button class="swatch-btn" data-theme="cocoa"><i class="dot" style="background:#d97706"></i>Kakao</button>
+        <button class="swatch-btn" data-theme="violet"><i class="dot" style="background:#c084fc"></i>Binafsha</button>
+      </div>
+      <div style="color:var(--muted);">Promo: <strong style="color:var(--accent)">KORA20</strong> (-20%) • 20 Kofe + 20 Shirinlik</div>
+    </div>
+
+    <!-- Navbar + Ko'p Tugmalar -->
+    <header class="nav">
+      <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">☕ KORA <span>ROAST HYPER</span></div>
+      <div class="nav-links">
+        <a href="#maker">Tayyorlash</a>
+        <a href="#videoKofe">Video Kofe</a>
+        <a href="#coffeeSection">20 Kofe</a>
+        <a href="#dessertSection">20 Shirinlik</a>
+        <button class="btn" id="cycleThemeBtn">🎨 Rang almashtir</button>
+        <button class="btn" id="discoBtn">🌈 Spektr</button>
+        <button class="btn" id="bookBtn">🪑 Stol</button>
+        <button class="btn btn-primary" id="cartOpenBtn">🛒 Savat <span class="cart-badge" id="cartCount">0</span></button>
+      </div>
+    </header>
+
+    <!-- Hero + O'zi Kofe Tayyorlash Stansiyasi -->
+    <section class="hero" id="maker">
+      <div>
+        <div class="tag">⚡ Jonli Video Kofe • Kichik Aylanuvchi Odamcha • 20+20</div>
+        <h1>Ko‘z uzib bo‘lmaydigan <em>Kofe & Shirinlik</em> studiyasi</h1>
+        <p>
+          Pastda kichkina barista odamcha o‘zi aylanib yuradi, o‘rtada tayyor <strong>Video Kofe</strong> o‘zi ishlab turadi,
+          o‘ngda esa o‘zingiz kofe tayyorlaysiz. Pastda 20 ta kofe va 20 ta shirinlik buyurtma tugmalari bilan tayyor!
+        </p>
+
+        <div class="hero-btns">
+          <a href="#coffeeSection" class="btn btn-primary">☕ 20 ta Kofe</a>
+          <a href="#dessertSection" class="btn btn-primary">🍰 20 ta Shirinlik</a>
+          <a href="#videoKofe" class="btn">🎬 Video Kofega tush</a>
+          <button class="btn" id="rouletteBtn">🎰 Kofe Ruletkasi</button>
+          <button class="btn" id="sparkBtn">✨ Uchqun portlashi</button>
+          <button class="btn" id="jumpTinyBtn">🦘 Odamchani sakrat</button>
+        </div>
+
+        <div class="mini-stats">
+          <div class="m-stat"><strong>20 + 20</strong><span>Kofe va Shirinlik</span></div>
+          <div class="m-stat"><strong id="brewedCount">0 ta</strong><span>Tayyorlagan kofe</span></div>
+          <div class="m-stat"><strong>6 rang</strong><span>Mavzu tanlovi</span></div>
+          <div class="m-stat"><strong id="orderClicks">0 ta</strong><span>Buyurtmalar</span></div>
+        </div>
+      </div>
+
+      <!-- O'zi Kofe Tayyorlash Paneli -->
+      <div class="maker-panel">
+        <div class="maker-top">
+          <h2>🧪 O‘zi Kofe Tayyorlash Stansiyasi</h2>
+          <span class="btn" style="padding:4px 10px; font-size:0.76rem;" id="makerPriceTag">0 so‘m</span>
+        </div>
+
+        <div class="maker-stage">
+          <div class="beaker">
+            <div class="layer-base" id="layerBase"></div>
+            <div class="layer-milk" id="layerMilk"></div>
+            <div class="layer-topping" id="layerTopping"></div>
+          </div>
+          <div>
+            <div class="maker-status-title" id="makerTitle">1-bosqich: Don maydalashni bosing</div>
+            <div class="maker-status-desc" id="makerDesc">Tugmalarni bosib, qatlam-qatlam o‘z kofengizni yarating.</div>
+            <div class="step-progress"><div class="step-fill" id="stepFill"></div></div>
+          </div>
+        </div>
+
+        <div class="maker-btns">
+          <button class="brew-btn" id="stepGrindBtn">1. Don maydalash (+8k)</button>
+          <button class="brew-btn" id="stepEspressoBtn">2. Espresso quyish (+14k)</button>
+          <button class="brew-btn" id="stepMilkBtn">3. Sut / Ko‘pik (+7k)</button>
+          <button class="brew-btn" id="stepFlavorBtn">4. Karamel/Aroma (+5k)</button>
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-primary" style="flex:1; justify-content:center;" id="saveBrewedBtn">+ Tayyor kofeni savatga ol</button>
+          <button class="btn" id="autoBrewBtn">⚡ Avto</button>
+          <button class="btn" id="resetBrewBtn">↺ Tozala</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHU SAHIFANING O'ZIDA CHIROYLI VIDEO KOFE -->
+    <section id="videoKofe">
+      <div class="sec-head">
+        <div>
+          <h2>🎬 Jonli Video Kofe — Tayyor Kofe Kinolavhasi</h2>
+          <p>Kofe quyilishi va bug‘ ko‘tarilishi o‘zi aylanib/ishlab turadi — yonidan darhol buyurtma bering</p>
+        </div>
+        <div class="pill-row">
+          <button class="pill active" id="vPrevBtn">← Oldingi sahna</button>
+          <button class="pill active" id="vNextBtn">Keyingi sahna →</button>
+        </div>
+      </div>
+
+      <div class="video-showcase">
+        <div class="video-frame">
+          <img id="vImg" src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=1200&q=80" alt="Video Kofe" />
+          <div class="coffee-pour-line"></div>
+          <div class="steam-cloud"></div>
+
+          <div class="v-top-hud">
+            <span class="v-chip" id="vBadge">● LIVE KOFE VIDEO • 1/4</span>
+            <span class="v-chip" id="vTime">00:00</span>
+          </div>
+
+          <div class="v-bottom-hud">
+            <div>
+              <strong id="vTitle" style="font-size:1.08rem;">Oltin Espresso Oqimi</strong>
+              <div id="vSub" style="font-size:0.82rem; color:var(--muted);">Boy krema va issiq aroma oqimi</div>
+            </div>
+            <button class="btn btn-primary" id="vOrderBtn">+ Shu kofeni ol</button>
+          </div>
+        </div>
+
+        <div class="video-side" id="vSceneList"></div>
+      </div>
+    </section>
+
+    <!-- 20 TA KOFE -->
+    <section id="coffeeSection">
+      <div class="sec-head">
+        <div>
+          <h2>☕ 20 ta Kofe Rasmi & Buyurtma</h2>
+          <p id="coffeeCounter">20 ta kofe ko‘rsatilmoqda</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="pill-row" id="coffeeCats">
+          <button class="pill active" data-cat="all">Barchasi (20)</button>
+          <button class="pill" data-cat="hot">Issiq Kofe</button>
+          <button class="pill" data-cat="cold">Muzdek / Iced</button>
+          <button class="pill" data-cat="special">Maxsus</button>
+          <button class="pill" data-cat="fav">❤️ Sevimli</button>
+        </div>
+        <div class="pill-row">
+          <input type="text" class="search-box" id="coffeeSearch" placeholder="Kofe qidirish..." />
+          <button class="pill active" data-csort="num">#1–20</button>
+          <button class="pill" data-csort="asc">Narx ↑</button>
+          <button class="pill" data-csort="desc">Narx ↓</button>
+        </div>
+      </div>
+
+      <div class="catalog-grid" id="coffeeGrid"></div>
+    </section>
+
+    <!-- 20 TA SHIRINLIK -->
+    <section id="dessertSection">
+      <div class="sec-head">
+        <div>
+          <h2>🍰 20 ta Shirinlik Rasmi & Buyurtma</h2>
+          <p id="dessertCounter">20 ta shirinlik ko‘rsatilmoqda</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="pill-row" id="dessertCats">
+          <button class="pill active" data-dcat="all">Barchasi (20)</button>
+          <button class="pill" data-dcat="cake">Tort & Chizkeyk</button>
+          <button class="pill" data-dcat="pastry">Kruassan & Bulochka</button>
+          <button class="pill" data-dcat="sweet">Shokolad & Makaron</button>
+          <button class="pill" data-dcat="fav">❤️ Sevimli</button>
+        </div>
+        <div class="pill-row">
+          <input type="text" class="search-box" id="dessertSearch" placeholder="Shirinlik qidirish..." />
+          <button class="pill active" data-dsort="num">#1–20</button>
+          <button class="pill" data-dsort="asc">Narx ↑</button>
+          <button class="pill" data-dsort="desc">Narx ↓</button>
+        </div>
+      </div>
+
+      <div class="catalog-grid" id="dessertGrid"></div>
+    </section>
+
+    <footer>
+      ☕ <strong>KORA ROAST HYPER</strong> — 6 Rang, Kichik Aylanuvchi Odamcha, Jonli Video Kofe & 20+20 Menyu.
+    </footer>
+  </div>
+
+  <!-- Savat Drawer -->
+  <div class="drawer-backdrop" id="cartDrawer">
+    <aside class="drawer">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3>🛒 Buyurtma Savati</h3>
+          <button class="btn" id="cartCloseBtn">✕</button>
+        </div>
+        <div class="cart-list" id="cartList"></div>
+      </div>
+
+      <div>
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+          <input type="text" id="promoInput" placeholder="Promo-kod: KORA20" style="flex:1; padding:9px 12px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text); outline:none;" />
+          <button class="btn" id="promoBtn">Qo‘llash</button>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-weight:900; font-size:1.1rem; margin-bottom:12px;">
+          <span>Jami:</span>
+          <span id="cartTotal" style="color:var(--accent)">0 so‘m</span>
+        </div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;" id="orderBtn">
+          Buyurtmani berish
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Stol Band Qilish Modal -->
+  <div class="modal-backdrop" id="bookModal">
+    <div class="modal">
+      <h3 style="margin-bottom:6px;">🪑 Stol band qilish</h3>
+      <p style="color:var(--muted); font-size:0.86rem; margin-bottom:14px;">Kofechada joyingizni oldindan band qiling.</p>
+      <form id="bookForm">
+        <input type="text" id="bkName" placeholder="Ismingiz" required />
+        <input type="tel" id="bkPhone" placeholder="Telefon (+998...)" required />
+        <select id="bkPlace">
+          <option value="Bar yonida">Bar yonida</option>
+          <option value="Deraza oldida">Deraza oldida</option>
+          <option value="VIP burchak">VIP burchak</option>
+        </select>
+        <input type="time" id="bkTime" value="18:30" required />
+        <div style="display:flex; justify-content:flex-end; gap:8px;">
+          <button type="button" class="btn" id="bookCloseBtn">Yopish</button>
+          <button type="submit" class="btn btn-primary">Band qilish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // 6 xil rang rejimi
+    const themeOrder = ["amber", "cyber", "matcha", "crimson", "cocoa", "violet"];
+    let tIdx = 0;
+
+    function applyTheme(name) {
+      document.body.dataset.theme = name;
+      tIdx = themeOrder.indexOf(name);
+      document.querySelectorAll(".swatch-btn").forEach(b => b.classList.toggle("active", b.dataset.theme === name));
+    }
+
+    document.querySelectorAll(".swatch-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.theme);
+        toast(`Rang: ${btn.textContent.trim()}`);
+      });
+    });
+
+    document.getElementById("cycleThemeBtn").addEventListener("click", () => {
+      tIdx = (tIdx + 1) % themeOrder.length;
+      applyTheme(themeOrder[tIdx]);
+      toast(`🎨 Yangi rang: ${themeOrder[tIdx].toUpperCase()}`);
+    });
+
+    document.getElementById("discoBtn").addEventListener("click", () => {
+      document.body.classList.toggle("disco-mode");
+      toast(document.body.classList.contains("disco-mode") ? "🌈 Spektr rejimi yoqildi!" : "Spektr rejimi o‘chirildi");
+    });
+
+    // Kichkina barista odamcha shu sahifada o'zi aylanib yuradi
+    const tinyEl = document.getElementById("tinyBarista");
+    const tinyBubble = document.getElementById("tinyBubble");
+    const tinyLines = ["Aylanib yuribman ☕", "Kofe zo‘r! 🔥", "20+20 menyu ✨", "Rang bos-chi 🎨", "Mazali! 😋"];
+    let tx = 24, tDir = 1, tJumpY = 0, tLine = 0;
+
+    document.getElementById("jumpTinyBtn").addEventListener("click", () => {
+      tJumpY = -26;
+      tinyBubble.textContent = "Hop! Sakradim 🦘";
+      burst(tx + 12, window.innerHeight - 40, 18);
+    });
+
+    setInterval(() => {
+      const maxW = Math.max(80, window.innerWidth - 70);
+      tx += tDir * 11;
+      if (tx >= maxW) { tx = maxW; tDir = -1; }
+      if (tx <= 16) { tx = 16; tDir = 1; }
+      if (tJumpY < 0) tJumpY += 3.2;
+      else tJumpY = 0;
+
+      const flip = tDir === -1 ? "scaleX(-1)" : "scaleX(1)";
+      tinyEl.style.left = tx + "px";
+      tinyEl.style.transform = `translateY(${tJumpY}px) ${flip}`;
+    }, 80);
+
+    setInterval(() => {
+      tLine = (tLine + 1) % tinyLines.length;
+      tinyBubble.textContent = tinyLines[tLine];
+    }, 3200);
+
+    // 20 TA KOFE
+    const coffeeRaw = [
+      ["Classic Espresso", "hot", "Yuqori bosimli boy espresso shot"],
+      ["Double Espresso", "hot", "Ikki barobar kuchli va aromatli espresso"],
+      ["Velvet Flat White", "hot", "Ipakdek mikrosutli ikki shot kofe"],
+      ["Cappuccino Classico", "hot", "Qalin ko‘pikli italyan klassikasi"],
+      ["Salted Caramel Latte", "hot", "Tuzli karamel va yumshoq sutli latte"],
+      ["Vanilla Bean Latte", "hot", "Tabiiy vanil urug‘li mayin kofe"],
+      ["Hazelnut Mocha", "hot", "Shokolad, findiq va espresso uyg‘unligi"],
+      ["Cortado Gold", "hot", "Teng nisbatda espresso va issiq sut"],
+      ["Americano Long", "hot", "Yengil va toza ta’mli uzun qora kofe"],
+      ["Ristretto Intense", "hot", "Qisqa va eng konsentrlangan espresso"],
+      ["Iced Vanilla Cold Brew", "cold", "18 soat sovuq damlangan muzdek kofe"],
+      ["Iced Caramel Macchiato", "cold", "Muz ustida karamel chiziqli latte"],
+      ["Iced Spanish Latte", "cold", "Quyultirilgan sutli salqin latte"],
+      ["Iced Mocha Frappe", "cold", "Muzga aralashtirilgan shokoladli kofe"],
+      ["Iced Coconut Americano", "cold", "Kokos suvi bilan tetiklantiruvchi amerika"],
+      ["Iced Mint Espresso Tonic", "cold", "Yalpiz va tonik bilan noodatiy sovuq kofe"],
+      ["Truffle Dark Mocha", "special", "Qora shokoladli maxsus barista retsepti"],
+      ["Golden Honey Latte", "special", "Tog‘ asali va dolchinli maxsus kofe"],
+      ["Cardamom Arabic Roast", "special", "Hil qo‘shilgan sharqona kofe"],
+      ["Tiramisu Cream Latte", "special", "Tiramisu deserti ta’midagi kofe"]
+    ];
+
+    // 20 TA SHIRINLIK
+    const dessertRaw = [
+      ["San Sebastian Cheesecake", "cake", "Karamell qobiqli mayin chizkeyk"],
+      ["Classic Tiramisu", "cake", "Kofega botirilgan savoiardi va maskarpone"],
+      ["Belgian Chocolate Cake", "cake", "Boy shokoladli qatlamli tort"],
+      ["Red Velvet Slice", "cake", "Qizil baxmal korj va krem-chiz"],
+      ["Honey Medovik", "cake", "Asalli mayin qatlamli tort"],
+      ["Pistachio Raspberry Cake", "cake", "Pista va malinali nafis tort"],
+      ["Caramel Flan", "cake", "Karamel sousli mayin puding"],
+      ["Sariyog‘li Kruassan", "pastry", "Qatlam-qatlam, qarsildoq sariyog‘li kruassan"],
+      ["Pain au Chocolat", "pastry", "Ichida ikki chiziq shokoladli kruassan"],
+      ["Almond Croissant", "pastry", "Bodom kremli va bodom bo‘lakli kruassan"],
+      ["Cinnamon Roll", "pastry", "Dolchin va oq krem glazurli bulochka"],
+      ["Cardamom Bun", "pastry", "Hil iforli shimoliy shirin bulochka"],
+      ["Churros & Chocolate Dip", "pastry", "Issiq shokoladga botiriladigan churros"],
+      ["Apple Strudel", "pastry", "Olma va mayizli qarsildoq shtrudel"],
+      ["Dark Chocolate Truffle", "sweet", "Qora shokoladli yumshoq tryufel"],
+      ["French Macarons (3 dona)", "sweet", "Rang-barang bodomli makaron"],
+      ["Praline Hazelnut Bites", "sweet", "Findikli shokoladli praline"],
+      ["Salted Caramel Fudge", "sweet", "Tuzli karamelli yumshoq shirinlik"],
+      ["Choco Brownie Warm", "sweet", "Issiq va shokoladli brauni"],
+      ["Affogato Al Caffe", "sweet", "Muzqaymoq ustiga issiq espresso"]
+    ];
+
+    const coffeeImgs = [
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80"
+    ];
+
+    const dessertImgs = [
+      "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=80"
+    ];
+
+    const fallbackCoffee = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='#241913'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#f59e0b' font-family='sans-serif' font-size='26' font-weight='bold'>KORA COFFEE</text></svg>`);
+    const fallbackDessert = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='#28151d'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#fb7185' font-family='sans-serif' font-size='26' font-weight='bold'>KORA DESSERT</text></svg>`);
+
+    const coffees20 = coffeeRaw.map(([name, cat, desc], idx) => ({
+      uid: "c-" + (idx + 1), num: idx + 1, name, cat, desc,
+      price: 21000 + ((idx * 1800) % 23000),
+      img: coffeeImgs[idx % coffeeImgs.length], fb: fallbackCoffee
+    }));
+
+    const desserts20 = dessertRaw.map(([name, cat, desc], idx) => ({
+      uid: "d-" + (idx + 1), num: idx + 1, name, cat, desc,
+      price: 19000 + ((idx * 1950) % 26000),
+      img: dessertImgs[idx % dessertImgs.length], fb: fallbackDessert
+    }));
+
+    let favs = JSON.parse(localStorage.getItem("kora_hyp_favs")) || ["c-1", "c-5", "d-1", "d-2"];
+    let cart = JSON.parse(localStorage.getItem("kora_hyp_cart")) || [];
+    let brewedCount = Number(localStorage.getItem("kora_hyp_brewed")) || 0;
+    let orderClicks = Number(localStorage.getItem("kora_hyp_orders")) || 0;
+
+    let cCat = "all", cSort = "num", cQuery = "";
+    let dCat = "all", dSort = "num", dQuery = "";
+    let discount = 0;
+
+    const fmt = (n) => Number(n).toLocaleString("uz-UZ") + " so‘m";
+    document.getElementById("brewedCount").textContent = `${brewedCount} ta`;
+    document.getElementById("orderClicks").textContent = `${orderClicks} ta`;
+
+    function toast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(window._tt);
+      window._tt = setTimeout(() => el.classList.remove("show"), 2000);
+    }
+
+    function save() {
+      localStorage.setItem("kora_hyp_favs", JSON.stringify(favs));
+      localStorage.setItem("kora_hyp_cart", JSON.stringify(cart));
+      localStorage.setItem("kora_hyp_brewed", String(brewedCount));
+      localStorage.setItem("kora_hyp_orders", String(orderClicks));
+    }
+
+    // O'zi kofe tayyorlash stansiyasi
+    const brew = { grind: false, espresso: false, milk: false, flavor: false };
+    function syncBrewBtns() {
+      document.getElementById("stepGrindBtn").classList.toggle("done", brew.grind);
+      document.getElementById("stepEspressoBtn").classList.toggle("done", brew.espresso);
+      document.getElementById("stepMilkBtn").classList.toggle("done", brew.milk);
+      document.getElementById("stepFlavorBtn").classList.toggle("done", brew.flavor);
+    }
+
+    function updateBrew() {
+      let price = 0, step = 0; const parts = [];
+      if (brew.grind) { price += 8000; step++; parts.push("Maydalangan don"); }
+      if (brew.espresso) { price += 14000; step++; parts.push("Espresso"); }
+      if (brew.milk) { price += 7000; step++; parts.push("Sut/Ko‘pik"); }
+      if (brew.flavor) { price += 5000; step++; parts.push("Maxsus aroma"); }
+
+      document.getElementById("layerBase").style.height = brew.espresso ? "48%" : (brew.grind ? "16%" : "0%");
+      document.getElementById("layerMilk").style.height = brew.milk ? "76%" : (brew.espresso ? "48%" : "0%");
+      document.getElementById("layerTopping").style.height = brew.flavor ? "16%" : "0%";
+      document.getElementById("stepFill").style.width = (step / 4) * 100 + "%";
+      document.getElementById("makerPriceTag").textContent = fmt(price);
+
+      const t = document.getElementById("makerTitle");
+      const d = document.getElementById("makerDesc");
+      if (!step) { t.textContent = "1-bosqich: Don maydalashni bosing"; d.textContent = "Tugmalarni bosib, qatlam-qatlam o‘z kofengizni yarating."; }
+      else if (step < 4) { t.textContent = `Jarayonda (${step}/4 bosqich)`; d.textContent = "Tanlangan: " + parts.join(" • "); }
+      else { t.textContent = "🎉 Kofe tayyor!"; d.textContent = "Retsept: " + parts.join(" + "); }
+      syncBrewBtns();
+    }
+
+    [
+      ["stepGrindBtn", "grind", "Don maydalash"],
+      ["stepEspressoBtn", "espresso", "Espresso quyish"],
+      ["stepMilkBtn", "milk", "Sut / Ko‘pik"],
+      ["stepFlavorBtn", "flavor", "Karamel/Aroma"]
+    ].forEach(([id, key, label]) => {
+      document.getElementById(id).addEventListener("click", () => {
+        brew[key] = !brew[key]; updateBrew();
+        toast(brew[key] ? `${label} qo‘shildi` : `${label} olib tashlandi`);
+      });
+    });
+
+    document.getElementById("autoBrewBtn").addEventListener("click", () => {
+      brew.grind = true; brew.espresso = true; brew.milk = true; brew.flavor = true;
+      updateBrew(); burst(window.innerWidth * 0.72, 240, 24); toast("⚡ 4 bosqich ham tayyorlandi!");
+    });
+
+    document.getElementById("resetBrewBtn").addEventListener("click", () => {
+      Object.keys(brew).forEach(k => brew[k] = false);
+      updateBrew(); toast("Stansiya tozalandi");
+    });
+
+    document.getElementById("saveBrewedBtn").addEventListener("click", () => {
+      let price = 0; const parts = [];
+      if (brew.grind) { price += 8000; parts.push("Maydalangan"); }
+      if (brew.espresso) { price += 14000; parts.push("Espresso"); }
+      if (brew.milk) { price += 7000; parts.push("Sut"); }
+      if (brew.flavor) { price += 5000; parts.push("Aroma"); }
+      if (!price) return toast("Avval kamida bitta tugmani bosing!");
+
+      brewedCount++;
+      document.getElementById("brewedCount").textContent = `${brewedCount} ta`;
+      save();
+      addToCart({ uid: "brew-" + Date.now(), name: `O‘z tayyorlagan kofe (${parts.join(", ")})`, price });
+      burst(window.innerWidth * 0.72, 240, 28);
+    });
+
+    // Shu sahifadagi tayyor Video Kofe
+    const vScenes = [
+      { uid: "vs-1", title: "Oltin Espresso Oqimi", sub: "Boy krema va issiq aroma oqimi", img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=1200&q=80", price: 24000 },
+      { uid: "vs-2", title: "Sut & Ko‘pik San’ati", sub: "Mayin sut oqimi bilan issiq kofe", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80", price: 30000 },
+      { uid: "vs-3", title: "Muzdek Cold Brew", sub: "Salqin muz ustida sekin oqim", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=1200&q=80", price: 35000 },
+      { uid: "vs-4", title: "Kofe & Shirinlik", sub: "Aromatli kofe va shirin juftlik", img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80", price: 37000 }
+    ];
+    let vIdx = 0, vSec = 0;
+
+    function renderVideoScene() {
+      const s = vScenes[vIdx];
+      document.getElementById("vImg").src = s.img;
+      document.getElementById("vTitle").textContent = s.title;
+      document.getElementById("vSub").textContent = s.sub;
+      document.getElementById("vBadge").textContent = `● LIVE KOFE VIDEO • ${vIdx + 1}/${vScenes.length}`;
+
+      document.getElementById("vSceneList").innerHTML = vScenes.map((item, idx) => `
+        <div class="scene-item ${idx === vIdx ? "active" : ""}" onclick="pickVScene(${idx})">
+          <div>
+            <div style="font-weight:800; font-size:0.84rem;">${idx + 1}. ${item.title}</div>
+            <div style="color:var(--accent); font-size:0.78rem; font-weight:800;">${fmt(item.price)}</div>
+          </div>
+          <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart({uid:vScenes[${idx}].uid, name:vScenes[${idx}].title, price:vScenes[${idx}].price})">+ Ol</button>
+        </div>
+      `).join("");
+    }
+
+    window.pickVScene = function(idx) {
+      vIdx = (idx + vScenes.length) % vScenes.length;
+      renderVideoScene();
+    };
+
+    document.getElementById("vPrevBtn").addEventListener("click", () => pickVScene(vIdx - 1));
+    document.getElementById("vNextBtn").addEventListener("click", () => pickVScene(vIdx + 1));
+    document.getElementById("vOrderBtn").addEventListener("click", () => {
+      const s = vScenes[vIdx];
+      addToCart({ uid: s.uid, name: s.title, price: s.price });
+    });
+
+    setInterval(() => {
+      vSec++;
+      const m = String(Math.floor(vSec / 60)).padStart(2, "0");
+      const s = String(vSec % 60).padStart(2, "0");
+      document.getElementById("vTime").textContent = `${m}:${s}`;
+      if (vSec % 6 === 0) pickVScene(vIdx + 1);
+    }, 1000);
+
+    // 20 Kofe + 20 Shirinlik
+    const cCatLabels = { hot: "Issiq Kofe", cold: "Muzdek Kofe", special: "Maxsus Kofe" };
+    const dCatLabels = { cake: "Tort & Chizkeyk", pastry: "Pishiriq & Kruassan", sweet: "Shirinlik & Desert" };
+
+    function renderGrid(list, gridId, counterId, totalLabel, labelMap) {
+      document.getElementById(counterId).textContent = `${list.length} ta ${totalLabel} ko‘rsatilmoqda (jami 20 ta)`;
+      const grid = document.getElementById(gridId);
+      if (!list.length) {
+        grid.innerHTML = `<p style="color:var(--muted); grid-column:1/-1; text-align:center; padding:28px;">Hech narsa topilmadi.</p>`;
+        return;
+      }
+      grid.innerHTML = list.map(item => {
+        const isFav = favs.includes(item.uid);
+        return `
+          <article class="item-card">
+            <div class="thumb">
+              <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.src='${item.fb}'" />
+              <span class="num-badge">#${item.num}</span>
+              <button class="heart-btn ${isFav ? "active" : ""}" onclick="toggleFav('${item.uid}')">♥</button>
+            </div>
+            <div class="item-body">
+              <div class="item-sub">${labelMap[item.cat] || item.cat}</div>
+              <div class="item-top">
+                <h3>${item.name}</h3>
+                <span class="item-price">${fmt(item.price)}</span>
+              </div>
+              <p class="item-desc">${item.desc}</p>
+              <div class="item-foot">
+                <button class="btn btn-primary" style="justify-content:center;" onclick="buyByUid('${item.uid}', false)">+ Buyurtma</button>
+                <button class="btn" onclick="buyByUid('${item.uid}', true)">⚡ Savat</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderCoffees() {
+      let list = [...coffees20];
+      if (cCat === "fav") list = list.filter(i => favs.includes(i.uid));
+      else if (cCat !== "all") list = list.filter(i => i.cat === cCat);
+      if (cQuery.trim()) {
+        const q = cQuery.toLowerCase();
+        list = list.filter(i => i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q));
+      }
+      if (cSort === "asc") list.sort((a, b) => a.price - b.price);
+      else if (cSort === "desc") list.sort((a, b) => b.price - a.price);
+      else list.sort((a, b) => a.num - b.num);
+      renderGrid(list, "coffeeGrid", "coffeeCounter", "kofe", cCatLabels);
+    }
+
+    function renderDesserts() {
+      let list = [...desserts20];
+      if (dCat === "fav") list = list.filter(i => favs.includes(i.uid));
+      else if (dCat !== "all") list = list.filter(i => i.cat === dCat);
+      if (dQuery.trim()) {
+        const q = dQuery.toLowerCase();
+        list = list.filter(i => i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q));
+      }
+      if (dSort === "asc") list.sort((a, b) => a.price - b.price);
+      else if (dSort === "desc") list.sort((a, b) => b.price - a.price);
+      else list.sort((a, b) => a.num - b.num);
+      renderGrid(list, "dessertGrid", "dessertCounter", "shirinlik", dCatLabels);
+    }
+
+    window.toggleFav = function(uid) {
+      if (favs.includes(uid)) favs = favs.filter(x => x !== uid);
+      else favs.push(uid);
+      save(); renderCoffees(); renderDesserts();
+    };
+
+    window.buyByUid = function(uid, openDrawer = false) {
+      const found = coffees20.find(x => x.uid === uid) || desserts20.find(x => x.uid === uid);
+      if (!found) return;
+      addToCart(found);
+      if (openDrawer) document.getElementById("cartDrawer").classList.add("open");
+    };
+
+    document.querySelectorAll("#coffeeCats .pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#coffeeCats .pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active"); cCat = btn.dataset.cat; renderCoffees();
+      });
+    });
+    document.querySelectorAll("[data-csort]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-csort]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active"); cSort = btn.dataset.csort; renderCoffees();
+      });
+    });
+    document.getElementById("coffeeSearch").addEventListener("input", (e) => { cQuery = e.target.value; renderCoffees(); });
+
+    document.querySelectorAll("#dessertCats .pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#dessertCats .pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active"); dCat = btn.dataset.dcat; renderDesserts();
+      });
+    });
+    document.querySelectorAll("[data-dsort]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-dsort]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active"); dSort = btn.dataset.dsort; renderDesserts();
+      });
+    });
+    document.getElementById("dessertSearch").addEventListener("input", (e) => { dQuery = e.target.value; renderDesserts(); });
+
+    document.getElementById("rouletteBtn").addEventListener("click", () => {
+      const rc = coffees20[Math.floor(Math.random() * coffees20.length)];
+      const rd = desserts20[Math.floor(Math.random() * desserts20.length)];
+      addToCart(rc); addToCart(rd);
+      burst(window.innerWidth / 2, window.innerHeight / 2, 32);
+      toast(`🎰 Ruletka: ${rc.name} + ${rd.name}!`);
+    });
+
+    // Savat
+    function addToCart(item) {
+      const ex = cart.find(c => c.uid === item.uid);
+      if (ex) ex.qty++;
+      else cart.push({ uid: item.uid, name: item.name, price: item.price, qty: 1 });
+      orderClicks++;
+      document.getElementById("orderClicks").textContent = `${orderClicks} ta`;
+      save(); renderCart();
+      toast(`🛒 ${item.name} qo‘shildi`);
+    }
+
+    window.chgQty = function(uid, d) {
+      cart = cart.map(c => c.uid === uid ? { ...c, qty: c.qty + d } : c).filter(c => c.qty > 0);
+      save(); renderCart();
+    };
+
+    function renderCart() {
+      document.getElementById("cartCount").textContent = cart.reduce((s, c) => s + c.qty, 0);
+      const list = document.getElementById("cartList");
+      if (!cart.length) {
+        list.innerHTML = `<p style="color:var(--muted); text-align:center; padding:28px;">Savat bo‘sh. Kofe yoki shirinlik qo‘shing!</p>`;
+        document.getElementById("cartTotal").textContent = "0 so‘m";
+        return;
+      }
+      list.innerHTML = cart.map(c => `
+        <div class="cart-row">
+          <div style="flex:1;">
+            <div style="font-weight:700; font-size:0.86rem;">${c.name}</div>
+            <div style="color:var(--accent); font-size:0.8rem; font-weight:800;">${fmt(c.price * c.qty)}</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:5px;">
+            <button class="q-btn" onclick="chgQty('${c.uid}', -1)">-</button>
+            <span style="font-weight:800; min-width:16px; text-align:center;">${c.qty}</span>
+            <button class="q-btn" onclick="chgQty('${c.uid}', 1)">+</button>
+          </div>
+        </div>
+      `).join("");
+
+      const sum = cart.reduce((s, c) => s + c.price * c.qty, 0);
+      const total = Math.round(sum * (1 - discount));
+      document.getElementById("cartTotal").textContent = fmt(total) + (discount ? " (-20%)" : "");
+    }
+
+    document.getElementById("promoBtn").addEventListener("click", () => {
+      const code = document.getElementById("promoInput").value.trim().toUpperCase();
+      if (code === "KORA20") { discount = 0.2; toast("20% chegirma qo‘llandi!"); }
+      else { discount = 0; toast("Kod: KORA20"); }
+      renderCart();
+    });
+
+    document.getElementById("orderBtn").addEventListener("click", () => {
+      if (!cart.length) return toast("Savat bo‘sh!");
+      cart = []; discount = 0; save(); renderCart();
+      document.getElementById("cartDrawer").classList.remove("open");
+      burst(window.innerWidth / 2, window.innerHeight / 2, 48);
+      toast("🎉 Buyurtmangiz qabul qilindi!");
+    });
+
+    const drawer = document.getElementById("cartDrawer");
+    document.getElementById("cartOpenBtn").addEventListener("click", () => drawer.classList.add("open"));
+    document.getElementById("cartCloseBtn").addEventListener("click", () => drawer.classList.remove("open"));
+    drawer.addEventListener("click", (e) => { if (e.target === drawer) drawer.classList.remove("open"); });
+
+    const bModal = document.getElementById("bookModal");
+    document.getElementById("bookBtn").addEventListener("click", () => bModal.classList.add("open"));
+    document.getElementById("bookCloseBtn").addEventListener("click", () => bModal.classList.remove("open"));
+    bModal.addEventListener("click", (e) => { if (e.target === bModal) bModal.classList.remove("open"); });
+    document.getElementById("bookForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      toast(`🪑 ${document.getElementById("bkName").value}, soat ${document.getElementById("bkTime").value} ga stol band qilindi!`);
+      bModal.classList.remove("open"); e.target.reset();
+    });
+
+    // Zarralar
+    const pCanvas = document.getElementById("bgParticles");
+    const pCtx = pCanvas.getContext("2d");
+    let pw, ph, pts = [];
+    function resizeP() { pw = pCanvas.width = window.innerWidth; ph = pCanvas.height = window.innerHeight; }
+    window.addEventListener("resize", resizeP); resizeP();
+
+    for (let i = 0; i < 45; i++) {
+      pts.push({ x: Math.random() * pw, y: Math.random() * ph, vx: (Math.random() - 0.5) * 0.6, vy: -Math.random() * 0.7 - 0.2, r: Math.random() * 2.4 + 1, a: Math.random() * 0.45 + 0.12 });
+    }
+    function burst(x, y, n = 28) {
+      for (let i = 0; i < n; i++) {
+        const ang = Math.random() * Math.PI * 2;
+        const spd = Math.random() * 4.5 + 1.5;
+        pts.push({ x, y, vx: Math.cos(ang) * spd, vy: Math.sin(ang) * spd, r: Math.random() * 3 + 1.4, a: 0.95 });
+      }
+      if (pts.length > 140) pts.splice(0, pts.length - 140);
+    }
+    document.getElementById("sparkBtn").addEventListener("click", () => {
+      burst(window.innerWidth / 2, window.innerHeight / 2, 40);
+      toast("✨ Uchqunlar portladi!");
+    });
+    function loopP() {
+      pCtx.clearRect(0, 0, pw, ph);
+      const col = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#f59e0b";
+      pts.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.vx *= 0.99;
+        if (p.y < -10) p.y = ph + 10;
+        if (p.x < -10) p.x = pw + 10;
+        if (p.x > pw + 10) p.x = -10;
+        pCtx.globalAlpha = p.a; pCtx.fillStyle = col;
+        pCtx.beginPath(); pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2); pCtx.fill();
+      });
+      pCtx.globalAlpha = 1;
+      requestAnimationFrame(loopP);
+    }
+    loopP();
+
+    updateBrew();
+    renderVideoScene();
+    renderCoffees();
+    renderDesserts();
+    renderCart();
+  </script>
+</body>
+</html>
